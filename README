@@ -1,0 +1,64 @@
+########################################################################
+## Supporting Material for
+##    "Optimizing Implementations of Lightweight Building Blocks"
+##
+## published at ToSC/FSE 2018   https://tosc.iacr.org/
+## and on the IACR ePrint at    https://eprint.iacr.org/2017/101
+##
+## AUTHORS:
+##    Jérémy Jean
+##    Thomas Peyrin
+##    Siang Meng Sim
+##    Jade Tourteaux
+## 
+########################################################################
+
+How to use:
+
+  ./non-lin-search [-a] [-v] [-w] [-u] [-q]
+                   [-l NUMBER] [-p NUMBER] [-r NUMBER]
+                   [-i SBOX] [-o SBOX]
+                   [-f FILE]
+
+Options:
+    -a : Enable all gates and all implemented combinaisons of these gates
+    -v : verbose mode
+    -u : expand only [-i] function (identity function by default)
+    -w : write graphe in file
+    -q : Enable all reversible gates
+
+    -l <value> : define an upper bound on the cost of the implementations generated
+    -p <value> : define the number of threads used
+    -r <value> : define an upper bound on the RAM used by the algorithm
+
+    -i <function> : define start function
+    -o <function> : define arrival function
+
+    -f <file> : define which logic library you want to use
+
+Note: <function> is either the LUT representation or the bit sliced representation
+
+If [-a] is not enabled, you must explicitely add some of these logic gates:
+
+  --not1
+  --and2
+  --nand2
+  --or2
+  --nor2
+  --nand3
+  --nor3
+  --xor2
+  --xnor2
+  --maoi1
+  --moai1
+
+EXAMPLES:
+
+  ./non-lin-search -av -o "c6901a2b385d4e7f"
+  -> Get the B-optimal implementation of SKINNY Sbox using all combinations of gates.
+
+  ./non-lin-search -o "b6a4 a137 3c56 2778" --nor2 --or2 --nand2 --nand3 --moai1
+  -> Get the B-optimal implementation of TWINE Sbox using only -nor2-or2-nand2-nand3-moai1- gates.
+
+  Note that the notation used in the "-o" parameter for the Sbox can either be the classical LUT-based notation, or the bit-sliced notation that we describe in the paper.
+
