@@ -113,7 +113,7 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
     case MAOI1_OR2   :
 
     //Reversible gates:
-    case CCNOT2       :
+    case PERES2       :
     case FREDKIN2_1   :
     case FREDKIN2_2   :
           for(int k = 0; k < N; k++)
@@ -136,7 +136,7 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
                 case XOR2_ORN2   : a = (~fun_prev.bit_slice[k] | fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp];break;
 
                 // Reversible gates
-                case CCNOT2      : a = (fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp];break;
+                case PERES2      : a = (fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp];break;
                 case FREDKIN2_1  : a = (~fun_prev.bit_slice[k] & fun_prev.bit_slice[tmp]) | (fun_prev.bit_slice[k] & fun_prev.bit_slice[j]);break;
                 case FREDKIN2_2  : a = (~fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) | (fun_prev.bit_slice[k] & fun_prev.bit_slice[tmp]);break;
               }
@@ -308,7 +308,7 @@ string bool_op_base_string(uint8_t op)
       // Reversible gates
       case RNOT1             : return feq+"RNOT1(F[]);\n";
       case CNOT1             : return feq+"CNOT1(F[], F[]);\n";
-      case CCNOT2            : return feq+"CCNOT2(F[], F[], F[]);\n";
+      case PERES2            : return feq+"PERES2(F[], F[], F[]);\n";
       case FREDKIN2_1        : return feq+"FREDKIN2_1(F[], F[], F[]);\n";
       case FREDKIN2_2        : return feq+"FREDKIN2_2(F[], F[], F[]);\n";
 
@@ -428,7 +428,7 @@ string bool_op_to_string(const function_t f, uint8_t op, bool reverse)
     case MAOI1_AND2     :
     case MAOI1_OR2      :
     // Reversible gates
-    case CCNOT2         :
+    case PERES2         :
     case FREDKIN2_1     :
     case FREDKIN2_2     :
     return bool_op_super_gates(f, op, bool_op_base_string(op), reverse);

@@ -147,7 +147,7 @@
 
 #define RNOT1      78
 #define CNOT1      79
-#define CCNOT2     80
+#define PERES2     80
 #define FREDKIN2_1 81
 #define FREDKIN2_2 82
 

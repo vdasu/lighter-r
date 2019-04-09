@@ -78,13 +78,13 @@ int orn2_cost;
 
 int gate_rnot1 = false;
 int gate_cnot1 = false;
-int gate_ccnot2 = false;
+int gate_peres2 = false;
 int gate_fredkin2_1 = false;
 int gate_fredkin2_2 = false;
 
 int rnot1_cost;
 int cnot1_cost;
-int ccnot2_cost;
+int peres2_cost;
 int fredkin2_1_cost;
 int fredkin2_2_cost;
 
@@ -144,7 +144,7 @@ void reversible_gates()
 {
   gate_rnot1 = true;
   gate_cnot1 = true;
-  gate_ccnot2 = true;
+  gate_peres2 = true;
   gate_fredkin2_1 = true;
   gate_fredkin2_2 = true;
 }
@@ -157,7 +157,7 @@ int bool_op_cost(uint8_t op)
     case NOT1              : return not1_cost;
     case RNOT1             : return rnot1_cost;
     case CNOT1             : return cnot1_cost;
-    case CCNOT2            : return ccnot2_cost;
+    case PERES2            : return peres2_cost;
     case FREDKIN2_1        : return fredkin2_1_cost;
     case FREDKIN2_2        : return fredkin2_2_cost;
     
@@ -273,7 +273,7 @@ void init_b(string conf_file)
         //Reversible gates
         if(key == "rnot1_cost") rnot1_cost = stod(value)*100;
         if(key == "cnot1_cost") cnot1_cost = stod(value)*100;
-        if(key == "ccnot2_cost") ccnot2_cost = stod(value)*100;
+        if(key == "peres2_cost") peres2_cost = stod(value)*100;
         if(key == "fredkin2_1_cost") fredkin2_1_cost = stod(value)*100;
         if(key == "fredkin2_2_cost") fredkin2_2_cost = stod(value)*100;
       }
@@ -410,9 +410,9 @@ void init_b(string conf_file)
   {
     b.push_back({CNOT1, bool_op_cost(CNOT1)});
   }
-  if(gate_ccnot2)
+  if(gate_peres2)
   {
-    b.push_back({CCNOT2, bool_op_cost(CCNOT2)});
+    b.push_back({PERES2, bool_op_cost(PERES2)});
   }
   if(gate_fredkin2_1)
   {
