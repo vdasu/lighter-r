@@ -6,7 +6,7 @@ The source codes, hosted at [GitHub](https://github.com/vdasu/lighter-r), are a 
 **Optimizing SBoxes For Circuit Implementation: From Classical To Reversible**
 by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
 
-
+Please feel free to suggest/contribute new features or fix bugs or add documentation.
 
 ## How to Use ##
 
@@ -54,7 +54,7 @@ The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](
 1. The `-a` option should not be used while proceesing LIGHTER-R (i.e., together with `-q`). 
 2. As the Fredkin gates have more than one effective output lines (the output lines which are not readily any input line), those gates are implemented separately.
 3. *The source codes come with no warranty. See the [LICENSE](./LICENSE) file for more details.*
-4. *We invite you to contribute: Please feel free to suggest/contribute new changes or fix bugs or add documentation.*
+
 
 ### Changes Made in Vanilla LIGHTER ###
 
