@@ -43,7 +43,7 @@ Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER; and
 |:--------------------------:|:-----------------:|:-----------:|:---------------:|:----------:|
 |   NOT (Tof<sub>1</sub>)    | NCT/ MCT/ MCT+MCF |      1      |         0       |     1      |
 |   CNOT  (Tof<sub>2</sub>)  | NCT/ MCT/ MCT+MCF |      1      |         1       |     1      |
-|  CCNOT (Tof<sub>3</sub>)   |    MCT/ MCT+MCF   |      5      |         5       |     1      |
+|  CCNOT (Tof<sub>3</sub>)   | NCT/ MCT/ MCT+MCF |      5      |         5       |     1      |
 |      Tof<sub>4</sub>       |    MCT/ MCT+MCF   |      13     |         5       |     1      |
 |     Fred<sub>3</sub>       |    MCF/ MCT+MCF   |      7      |         5       |     1      |
 |     Fred<sub>4</sub>       |    MCF/ MCT+MCF   |      15     |         5       |     1      |
@@ -62,6 +62,7 @@ The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](
 1. `software.conf` is renamed as [`CPU.conf`](./CPU.conf)
 2. The description of the SBox (such as `0123456789ABCDEF`) is used automatically in the names of the C-like implementation files
 3. The libraries (`.conf` files) are moved to the [conf_files](./conf_files) directory
+4. Minor update in the [Makefile](./Makefile) to suppress an output (`utils.cpp:65:31: warning: ignoring return value of ‘int system(const char*)`)
 
 ## Contributors ##
 * [Vishnu Asutosh Dasu](mailto:vishnu.asutosh@learner.manipal.edu)
