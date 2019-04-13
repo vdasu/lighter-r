@@ -2,3 +2,4 @@
 *.o
 non-lin-search
 test
+implementation*
