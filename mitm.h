@@ -145,11 +145,14 @@
 #define XOR2_ORN2_ANDN2  76
 #define XOR2_ORN2_ORN2   77
 
-#define RNOT1      78
-#define CNOT1      79
-#define CCNOT2     80
-#define FREDKIN2_1 81
-#define FREDKIN2_2 82
+#define RNOT1       78
+#define CNOT1       79
+#define CCNOT2      80
+#define CCCNOT2     81
+#define FREDKIN2_1  82
+#define FREDKIN2_2  83
+#define FREDKIN2_41 84
+#define FREDKIN2_42 85
 
 
 using namespace std;

@@ -73,8 +73,6 @@ string bool_op_two_inputs(const function_t f, int operation, string s, bool reve
       case XOR2  : a = fun_prev.bit_slice[tmp] ^ fun_prev.bit_slice[j]; break;
       case MOAI1 :
       case XNOR2 : a = ~(fun_prev.bit_slice[tmp] ^ fun_prev.bit_slice[j]); break;
-
-      // Reversible gates
       case CNOT1 : a = (fun_prev.bit_slice[tmp]) ^ (fun_prev.bit_slice[j]); break;
     }
     if(!reverse) b = f.bit_slice[f.info_line];
@@ -111,11 +109,9 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
     case MAOI1_NOR2  :
     case MAOI1_AND2  :
     case MAOI1_OR2   :
-
-    //Reversible gates:
-    case CCNOT2       :
-    case FREDKIN2_1   :
-    case FREDKIN2_2   :
+    case CCNOT2      :
+    case FREDKIN2_1  :
+    case FREDKIN2_2  :
           for(int k = 0; k < N; k++)
           {
             for(int j = 0; j < N; j++)
@@ -134,8 +130,6 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
                 case MOAI1_NOR2  : a = (fun_prev.bit_slice[k] | fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp];break;
                 case XOR2_ANDN2  : a = (~fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp];break;
                 case XOR2_ORN2   : a = (~fun_prev.bit_slice[k] | fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp];break;
-
-                // Reversible gates
                 case CCNOT2      : a = (fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp];break;
                 case FREDKIN2_1  : a = (~fun_prev.bit_slice[k] & fun_prev.bit_slice[tmp]) | (fun_prev.bit_slice[k] & fun_prev.bit_slice[j]);break;
                 case FREDKIN2_2  : a = (~fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) | (fun_prev.bit_slice[k] & fun_prev.bit_slice[tmp]);break;
@@ -167,6 +161,9 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
     case MOAI1_OR3        :
     case MAOI1_NOR2_OR2   :
     case MOAI1_OR2_OR2    :
+    case CCCNOT2          :
+    case FREDKIN2_41      :
+    case FREDKIN2_42      :
           for(int k = 0; k < N; k++)
           {
             for(int j = 0; j < N; j++)
@@ -193,6 +190,11 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
                   case MAOI1_NOR2_OR2   :
                   case MOAI1_OR2_OR2    :
                   case MAOI1_NOR3       : a = ~(fun_prev.bit_slice[k]|fun_prev.bit_slice[j]|fun_prev.bit_slice[l])^fun_prev.bit_slice[tmp];break;
+                  case CCCNOT2          : a = (fun_prev.bit_slice[k]&fun_prev.bit_slice[j]&fun_prev.bit_slice[l])^fun_prev.bit_slice[tmp];break;
+                  case FREDKIN2_41      : a = (~(fun_prev.bit_slice[k]&fun_prev.bit_slice[j]&fun_prev.bit_slice[l])) | 
+                                              (fun_prev.bit_slice[k]&fun_prev.bit_slice[j]&fun_prev.bit_slice[tmp]);break;
+                  case FREDKIN2_42      : a = (~(fun_prev.bit_slice[k]&fun_prev.bit_slice[j]&fun_prev.bit_slice[tmp])) | 
+                                              (fun_prev.bit_slice[k]&fun_prev.bit_slice[j]&fun_prev.bit_slice[l]);break;            
                 }
                 if(!reverse) b = f.bit_slice[f.info_line];
                 else b = f.prev;
@@ -305,12 +307,14 @@ string bool_op_base_string(uint8_t op)
     switch (op)
     {
       case NOT1              : return feq+"NOT1(F[]);\n";
-      // Reversible gates
       case RNOT1             : return feq+"RNOT1(F[]);\n";
       case CNOT1             : return feq+"CNOT1(F[], F[]);\n";
       case CCNOT2            : return feq+"CCNOT2(F[], F[], F[]);\n";
+      case CCCNOT2           : return feq+"CCCNOT2(F[], F[], F[]);\n";
       case FREDKIN2_1        : return feq+"FREDKIN2_1(F[], F[], F[]);\n";
       case FREDKIN2_2        : return feq+"FREDKIN2_2(F[], F[], F[]);\n";
+      case FREDKIN2_41       : return feq+"FREDKIN2_41(F[], F[], F[], F[]);\n";
+      case FREDKIN2_42       : return feq+"FREDKIN2_42(F[], F[], F[], F[]);\n";
 
       case XOR2              : return feq+"XOR2 (F[], F[]);\n";
       case XNOR2             : return feq+"XNOR2(F[], F[]);\n";
@@ -393,7 +397,6 @@ string bool_op_to_string(const function_t f, uint8_t op, bool reverse)
   switch (op)
   {
     case  NOT1 :
-    // Reversible gates
     case RNOT1 :
     return bool_op_not(f, bool_op_base_string(op), reverse);
 
@@ -401,7 +404,6 @@ string bool_op_to_string(const function_t f, uint8_t op, bool reverse)
     case XNOR2 :
     case MAOI1 :
     case MOAI1 :
-    // Reversible gates
     case CNOT1 :
     return bool_op_two_inputs(f, op, bool_op_base_string(op), reverse);
 
@@ -427,10 +429,12 @@ string bool_op_to_string(const function_t f, uint8_t op, bool reverse)
     case MAOI1_NOR2     :
     case MAOI1_AND2     :
     case MAOI1_OR2      :
-    // Reversible gates
     case CCNOT2         :
+    case CCCNOT2        :
     case FREDKIN2_1     :
     case FREDKIN2_2     :
+    case FREDKIN2_41    :
+    case FREDKIN2_42    :
     return bool_op_super_gates(f, op, bool_op_base_string(op), reverse);
 
     case MOAI1_AND2_NAND2  :

@@ -79,14 +79,20 @@ int orn2_cost;
 int gate_rnot1 = false;
 int gate_cnot1 = false;
 int gate_ccnot2 = false;
+int gate_cccnot2 = false;
 int gate_fredkin2_1 = false;
 int gate_fredkin2_2 = false;
+int gate_fredkin2_41 = false;
+int gate_fredkin2_42 = false;
 
 int rnot1_cost;
 int cnot1_cost;
 int ccnot2_cost;
+int cccnot2_cost;
 int fredkin2_1_cost;
 int fredkin2_2_cost;
+int fredkin2_41_cost;
+int fredkin2_42_cost;
 
 
 function_t parse_function(string str)
@@ -145,8 +151,11 @@ void reversible_gates()
   gate_rnot1 = true;
   gate_cnot1 = true;
   gate_ccnot2 = true;
+  gate_cccnot2 = true;
   gate_fredkin2_1 = true;
   gate_fredkin2_2 = true;
+  gate_fredkin2_41 = true;
+  gate_fredkin2_42 = true;
 }
 
 
@@ -158,8 +167,11 @@ int bool_op_cost(uint8_t op)
     case RNOT1             : return rnot1_cost;
     case CNOT1             : return cnot1_cost;
     case CCNOT2            : return ccnot2_cost;
+    case CCCNOT2           : return cccnot2_cost;
     case FREDKIN2_1        : return fredkin2_1_cost;
     case FREDKIN2_2        : return fredkin2_2_cost;
+    case FREDKIN2_41       : return fredkin2_41_cost;
+    case FREDKIN2_42       : return fredkin2_42_cost;
     
     case XOR2              : return xor2_cost;
     case XNOR2             : return xnor2_cost;
@@ -414,6 +426,10 @@ void init_b(string conf_file)
   {
     b.push_back({CCNOT2, bool_op_cost(CCNOT2)});
   }
+  if(gate_cccnot2)
+  {
+    b.push_back({CCCNOT2, bool_op_cost(CCCNOT2)});
+  }
   if(gate_fredkin2_1)
   {
     b.push_back({FREDKIN2_1, bool_op_cost(FREDKIN2_1)});
@@ -421,6 +437,14 @@ void init_b(string conf_file)
   if(gate_fredkin2_2)
   {
     b.push_back({FREDKIN2_2, bool_op_cost(FREDKIN2_2)});
+  }
+  if(gate_fredkin2_41)
+  {
+    b.push_back({FREDKIN2_41, bool_op_cost(FREDKIN2_41)});
+  }
+  if(gate_fredkin2_42)
+  {
+    b.push_back({FREDKIN2_42, bool_op_cost(FREDKIN2_42)});
   }
 
   sort(b.begin(), b.end());

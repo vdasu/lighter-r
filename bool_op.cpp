@@ -155,6 +155,31 @@ void bool_op_double_gates(function_t f, vector<function_t> *v, int operation)
       case MAOI1_NOR2_OR2   :
       case MOAI1_OR2_OR2    :
       case MAOI1_NOR3       : fun_tmp.bit_slice[i] = ~(f.bit_slice[(i+a)%N]|f.bit_slice[(i+b)%N]|f.bit_slice[(i+c)%N])^f.bit_slice[i];break;
+      case CCCNOT2          : {
+                                fun_tmp.bit_slice[i] = (f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[(i+c)%N])^f.bit_slice[i];
+                                int _ = f.bit_slice[(i+a)%N];
+                                int __ = f.bit_slice[(i+b)%N];
+                                int ___ = f.bit_slice[(i+c)%N];
+                                break;
+                              }
+      case FREDKIN2_41     : {
+                                fun_tmp.bit_slice[i] = (~(f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[(i+c)%N])) | 
+                                                        (f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[i]);
+                                int _ = f.bit_slice[(i+a)%N];
+                                int __ = f.bit_slice[(i+b)%N];
+                                int ___ = (~(f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[i])) | 
+                                          (f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[(i+c)%N]);
+                                break;
+                             }
+      case FREDKIN2_42    : {
+                                fun_tmp.bit_slice[i] = (~(f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[i])) | 
+                                                        (f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[(i+c)%N]);
+                                int _ = f.bit_slice[(i+a)%N];
+                                int __ = f.bit_slice[(i+b)%N];
+                                int ___ = (~(f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[(i+c)%N])) | 
+                                          (f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[i]);
+                                break;
+                             }
     }
     fun_tmp.prev = f.bit_slice[i];
     fun_tmp.info_line = (uint8_t)i;
@@ -183,6 +208,9 @@ void bool_op_double_gates(function_t f, vector<function_t> *v, int operation)
     case MAOI1_NOR3       : 
     case XOR2_AND2_AND2   :
     case XOR2_OR2_OR2     :
+    case CCCNOT2          :
+    case FREDKIN2_41      :
+    case FREDKIN2_42      :
                        for (int i = 0; i < N; i++)
                        {
                          v->push_back(three_inputs(f, i, 1, 2, 3, operation));
@@ -320,9 +348,12 @@ void bool_op_fun( int op_id, function_t f, vector<function_t> *v)
     case MOAI1_OR3        :
     case MAOI1_NOR2_OR2   :
     case MOAI1_OR2_OR2    : 
-    case CCNOT2           :  
+    case CCNOT2           : 
+    case CCCNOT2          : 
     case FREDKIN2_1       : 
-    case FREDKIN2_2       : bool_op_double_gates(f, v, op_id); break;
+    case FREDKIN2_2       : 
+    case FREDKIN2_41      : 
+    case FREDKIN2_42      : bool_op_double_gates(f, v, op_id); break;
 
     case MOAI1_AND2_NAND2  :
     case MOAI1_OR2_NOR2    :
