@@ -1,6 +1,6 @@
 
 # LIGHTER-R #
-LIGHTER-R is a tool to (near-) optimally implement a given 4 × 4 SBox in using a given reversible logic library (with an associated cost metric). This is an extension of the tool LIGHTER ([original publication](https://tosc.iacr.org/index.php/ToSC/article/view/806), [archived version](https://eprint.iacr.org/2017/101), [source codes](http://jeremy.jean.free.fr/pub/fse2018_layer_implementations.tar.gz)); which only works for 4 × 4 SBoxes the classical computing paradigm, namely for ASIC and CPU implementations.
+LIGHTER-R is a tool to (near-)optimally implement a given 4 × 4 SBox in using a given reversible logic library (with an associated cost metric). This is an extension of the tool LIGHTER [[original publication](https://tosc.iacr.org/index.php/ToSC/article/view/806), [archived version](https://eprint.iacr.org/2017/101), [source codes](http://jeremy.jean.free.fr/pub/fse2018_layer_implementations.tar.gz)]; which only works for 4 × 4 SBoxes the classical computing paradigm, namely for ASIC and CPU implementations.
 
 The source codes, hosted at [GitHub](https://github.com/vdasu/lighter-r), are a supporting component for the paper:
 **Optimizing SBoxes For Circuit Implementation: From Classical To Reversible**
@@ -9,7 +9,8 @@ by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
 
 
 ## How to Use ##
-  
+
+### Command ###
    `./non-lin-search [-v] [-w] [-u] [-q]
                    [-l NUMBER] [-p NUMBER] [-r NUMBER]
                    [-i SBOX] [-o SBOX]
@@ -32,10 +33,12 @@ by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
 
 See the "README-lighter" file (which is the original readme content for the vanilla LIGHTER) for more information.
 
-## Implemented Reversible Logic Libraries ##
-|  Gates  |  Library  | Quantum Cost  | Two-qubit Cost  | Gate Count |
-|:-------:|:---------:|:-------------:|:---------------:|:----------:|
+### Examples ###
 
+## Implemented Reversible Logic Libraries ##
+|  Gates  |      Library     | Quantum Cost  | Two-qubit Cost  | Gate Count |
+|:-------:|:----------------:|:-------------:|:---------------:|:----------:|
+|   NOT   | NCT, MCT, MCT+MCF | 
 See the paper for more details.
 
 
@@ -43,7 +46,7 @@ See the paper for more details.
 ## Notes ##
 1. The `-a` option should not be used while proceesing LIGHTER-R (i.e., with the `-q` option). 
 2. As the Fredkin gates have more than one effective output lines (the output lines which are not readily any input line), those gates are implemented separately.
-3. *The source codes come with no warranty. See the LICENSE file for more details.*
+3. *The source codes come with no warranty. See the "LICENSE" file for more details.*
 4. *We invite you to contribute: Please feel free to suggest/contribute new changes or fix bugs or add documentation.*
 
 ## Contributors ##
