@@ -31,7 +31,7 @@ Please feel free to suggest/contribute new features or fix bugs or add documenta
 
     -f <file> : Define the logic library with the associated cost metric
 
-    -s <string> : Define implementation ID
+    -s <string> : Define implementation information
 
 Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER; and the `-a` option is omitted. The `-q` option is necessary for LIGHTER-R to work; and the `-s` option takes a string (such as the cipher name) and associates the string to the names of the C-like implementation files.
 
@@ -60,7 +60,7 @@ The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](
 
 0. All basic functionalities are preserved — so the vanilla LIGHTER can be utilized (including the `-a` option)
 1. `software.conf` is renamed as [`CPU.conf`](./CPU.conf)
-2. The description of the SBox (such as `0123456789ABCDEF`) is used automatically to the names of the C-like implementation files
+2. The description of the SBox (such as `0123456789ABCDEF`) is used automatically in the names of the C-like implementation files
 
 ## Contributors ##
 * [Vishnu Asutosh Dasu](mailto:vishnu.asutosh@learner.manipal.edu)
