@@ -44,7 +44,7 @@ Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER; and
 |   NOT (Tof<sub>1</sub>)    | NCT/ MCT/ MCT+MCF |      1      |         0       |     1      |
 |   CNOT  (Tof<sub>2</sub>)  | NCT/ MCT/ MCT+MCF |      1      |         1       |     1      |
 |  CCNOT (Tof<sub>3</sub>)   |    MCT/ MCT+MCF   |      5      |         5       |     1      |
-|      Tof<sub>4</sub>       |    MCT/ MCT+MCF   |      13     |         5       |     1      |
+|  CCCNOT (Tof<sub>4</sub>)  |    MCT/ MCT+MCF   |      13     |         5       |     1      |
 |     Fred<sub>3</sub>       |    MCF/ MCT+MCF   |      7      |         5       |     1      |
 |     Fred<sub>4</sub>       |    MCF/ MCT+MCF   |      15     |         5       |     1      |
 
