@@ -4,12 +4,11 @@ LIGHTER-R is a tool to (near-) optimally implement a given 4 × 4 SBox in using 
 
 ## How to use ##
   
-  `./non-lin-search [-a] [-v] [-w] [-u] [-q]
+  `./non-lin-search [-v] [-w] [-u] [-q]
                    [-l NUMBER] [-p NUMBER] [-r NUMBER]
                    [-i SBOX] [-o SBOX]
                    [-f FILE]`
 
-    -a : Enable all gates and all implemented combinaisons of these gates
     -v : Verbose mode
     -u : Expand only [-i] function (identity function by default)
     -w : Write graphe in file
@@ -27,3 +26,12 @@ LIGHTER-R is a tool to (near-) optimally implement a given 4 × 4 SBox in using 
 
 See the "README-lighter" file (which is the original readme content for the vanilla LIGHTER) for more information.
 
+## Notes ##
+1. The `-a` options should not be used while proceesing LIGHTER-R (i.e., with the `-q` option). 
+2. As the Fredkin gates have more than one effective output lines (the output lines which are not readily any input line), those gates are implemented separately.
+
+
+
+*The source codes come with no warranty. See the LICENSE file for more details.*
+
+*We invite you to contribute: Please feel free to suggest/contribute new changes or fix bugs or add documentation.*
