@@ -1,10 +1,15 @@
 
 # LIGHTER-R #
-LIGHTER-R is a tool to (near-) optimally implement a given 4 × 4 SBox in using a reversible logic library (with an associated cost metric). This is an extension of the tool LIGHTER ([original publication](https://tosc.iacr.org/index.php/ToSC/article/view/806), [archived version](https://eprint.iacr.org/2017/101), [source codes](http://jeremy.jean.free.fr/pub/fse2018_layer_implementations.tar.gz)), which only works for 4 × 4 SBoxes for ASIC and CPU (classical computing).
+LIGHTER-R is a tool to (near-) optimally implement a given 4 × 4 SBox in using a given reversible logic library (with an associated cost metric). This is an extension of the tool LIGHTER ([original publication](https://tosc.iacr.org/index.php/ToSC/article/view/806), [archived version](https://eprint.iacr.org/2017/101), [source codes](http://jeremy.jean.free.fr/pub/fse2018_layer_implementations.tar.gz)), which only works for 4 × 4 SBoxes for ASIC and CPU (classical computing).
+
+> The source codes are a supporting material for the paper:
+**Optimizing SBoxes For Circuit Implementation: From Classical To Reversible**
+by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
+
 
 ## How to use ##
   
-  `./non-lin-search [-v] [-w] [-u] [-q]
+   `./non-lin-search [-v] [-w] [-u] [-q]
                    [-l NUMBER] [-p NUMBER] [-r NUMBER]
                    [-i SBOX] [-o SBOX]
                    [-f FILE]`
@@ -25,6 +30,8 @@ LIGHTER-R is a tool to (near-) optimally implement a given 4 × 4 SBox in using 
     -f <file> : Define which logic library you want to use
 
 See the "README-lighter" file (which is the original readme content for the vanilla LIGHTER) for more information.
+
+## Implemented Reversible Logic Libraries ##
 
 ## Notes ##
 1. The `-a` options should not be used while proceesing LIGHTER-R (i.e., with the `-q` option). 
