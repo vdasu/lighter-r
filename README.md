@@ -26,8 +26,8 @@ by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
     -p <value> : Define the number of threads used
     -r <value> : Define an upper bound on the RAM used by the algorithm
 
-    -i <function> : define start function
-    -o <function> : define arrival function
+    -i <function> : Define start function
+    -o <function> : Define arrival function
 
     -f <file> : Define which logic library you want to use
 
