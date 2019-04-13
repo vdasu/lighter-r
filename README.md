@@ -39,20 +39,24 @@ Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER; and
 
 ## Implemented Reversible Logic Gates ##
 
-|            Gate            |      Library      |Quantum Cost | Two-qubit Cost  | Gate Count |
-|:--------------------------:|:-----------------:|:-----------:|:---------------:|:----------:|
-|   NOT (Tof<sub>1</sub>)    | NCT/ MCT/ MCT+MCF |      1      |         0       |     1      |
-|   CNOT  (Tof<sub>2</sub>)  | NCT/ MCT/ MCT+MCF |      1      |         1       |     1      |
-|  CCNOT (Tof<sub>3</sub>)   | NCT/ MCT/ MCT+MCF |      5      |         5       |     1      |
-|      Tof<sub>4</sub>       |    MCT/ MCT+MCF   |      13     |         5       |     1      |
-|     Fred<sub>3</sub>       |    MCF/ MCT+MCF   |      7      |         5       |     1      |
-|     Fred<sub>4</sub>       |    MCF/ MCT+MCF   |      15     |         5       |     1      |
+|            Gate            |      Library      |Quantum Cost | Two-qubit Cost  | Gate Count |   Symbol     |
+|:--------------------------:|:-----------------:|:-----------:|:---------------:|:----------:|:------------:|
+|   NOT (Tof<sub>1</sub>)    | NCT/ MCT/ MCT+MCF |      1      |         0       |     1      |  |
+|   CNOT  (Tof<sub>2</sub>)  | NCT/ MCT/ MCT+MCF |      1      |         1       |     1      |  |
+|  CCNOT (Tof<sub>3</sub>)   | NCT/ MCT/ MCT+MCF |      5      |         5       |     1      |  |
+|      Tof<sub>4</sub>       |    MCT/ MCT+MCF   |      13     |         5       |     1      |  |
+|     Fred<sub>3</sub>       |    MCF/ MCT+MCF   |      7      |         5       |     1      |  |
+|     Fred<sub>4</sub>       |    MCF/ MCT+MCF   |      15     |         5       |     1      |  |
 
 The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](https://ceit.aut.ac.ir/QDA/RCV.htm) (version 2.5) tool. It shows the two-qubit cost for the Fred<sub>4</sub> gate is shown as −5, we treat this as an editorial mistake and consider the cost as 5.
 
+### Convention for Symbols ###
+
 ## Notes ##
 1. The `-a` option should not be used while proceesing LIGHTER-R (i.e., together with `-q`). 
-2. As the Fredkin gates have more than one effective output lines (the output lines which are not readily any input line), those gates are implemented separately.
+2. As the Fredkin gates have more than one effective output lines (the output lines which are not readily any input line), those gates are implemented separately:
+    1. Fred<sub>3</sub>
+    2. Fred<sub>4</sub>
 3. The Peres (Per<sub>3</sub>) gate is implemented in the [peres](https://github.com/vdasu/lighter-r/tree/peres) branch, but this brance is not under active development
 4. *The source codes come with no warranty. See the [LICENSE](./LICENSE) file for more details.*
 
