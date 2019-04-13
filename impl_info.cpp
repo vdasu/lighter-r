@@ -34,6 +34,7 @@ extern map<int, set<function_t> > f2_succ;
 extern int count_list;
 extern int max_impl;
 extern int shortest_path;
+extern string implementation_id;
 
 int cost_1;
 int cost_2;
@@ -170,7 +171,10 @@ void get_implementation(function_t f1,
   {
      cout << "Generating implementation " << impl_number << endl;
      shortest_path = cost_1+cost_2;
-     ofstream impl("implementation_" + to_string(impl_number) + ".c");
+     if(implementation_id!="_") {
+       implementation_id = "_" + implementation_id;
+     }
+     ofstream impl("implementation" + implementation_id + to_string(impl_number) + ".c");
      if(unsorted_function == start) impl << s2 << s1;
      else if(unsorted_function == arrival) impl << s1 << s2;
      impl << "// Cost : " << double(cost_1 + cost_2)/100 << endl;

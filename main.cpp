@@ -34,6 +34,7 @@ map<int, set<function_t> > f1_succ;
 map<int, set<function_t> > f2_succ;
 int count_list;
 int shortest_path = numeric_limits<int>::max();
+string implementation_id = "_";
 
 int max_GE = 0;
 bool verbose = false;
@@ -490,7 +491,7 @@ int main(int argc, char *argv[])
   };
 
   int opt;
-  while ((opt = getopt_long(argc, argv, "i:o:m:l:vuwaqp:f:r:", longopts, NULL)) != EOF)
+  while ((opt = getopt_long(argc, argv, "i:o:m:l:vuwaqp:f:r:s:", longopts, NULL)) != EOF)
   {
     switch(opt)
     {
@@ -505,6 +506,7 @@ int main(int argc, char *argv[])
       case 'p': omp_nb_threads = (atoi(optarg));  cout << "Thread number : "<< omp_nb_threads<<endl;break;
       case 'f': conf_file = optarg; break;
       case 'r': max_ram = atoi(optarg); break;
+      case 's': implementation_id = optarg + implementation_id; break;
       case '?': fprintf(stderr, "wrong cmd line");
     }
   }
