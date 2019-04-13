@@ -48,7 +48,7 @@ Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER; and
 |     Fred<sub>3</sub>       |    MCF/ MCT+MCF   |      7      |         5       |     1      |  |
 |     Fred<sub>4</sub>       |    MCF/ MCT+MCF   |      15     |         5       |     1      |  |
 
-The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](https://ceit.aut.ac.ir/QDA/RCV.htm) (version 2.5) tool. It shows the two-qubit cost for the Fred<sub>4</sub> gate is shown as −5, we treat this as an editorial mistake and consider the cost as 5.
+The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](https://ceit.aut.ac.ir/QDA/RCV.htm) (version 2.5) tool. It shows the two-qubit cost for the Fred<sub>4</sub> gate as −5, we treat this as an editorial mistake and consider the cost as 5.
 
 ### Naming Convention ###
 
