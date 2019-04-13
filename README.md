@@ -53,7 +53,8 @@ The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](
 ## Notes ##
 1. The `-a` option should not be used while proceesing LIGHTER-R (i.e., together with `-q`). 
 2. As the Fredkin gates have more than one effective output lines (the output lines which are not readily any input line), those gates are implemented separately.
-3. *The source codes come with no warranty. See the [LICENSE](./LICENSE) file for more details.*
+3. The Peres (Per<sub>3</sub>) gate is implemented in the [peres](https://github.com/vdasu/lighter-r/tree/peres) branch, but this not under active development
+4. *The source codes come with no warranty. See the [LICENSE](./LICENSE) file for more details.*
 
 
 ### Changes Made in Vanilla LIGHTER ###
