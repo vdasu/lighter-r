@@ -52,7 +52,8 @@ The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](
 
 ### Naming Convention ###
 
-## Notes ##
+### Notes ###
+
 1. The `-a` option should not be used while proceesing LIGHTER-R (i.e., together with `-q`). 
 2. As the Fredkin gates have more than one effective output lines (the output lines which are not readily any input line), those gates are implemented separately:
     1. Fred<sub>3</sub>
@@ -64,11 +65,12 @@ The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](
 ### Changes Made in Vanilla LIGHTER ###
 
 0. All basic functionalities are preserved — so the vanilla LIGHTER can be utilized (including the `-a` option)
-1. `software.conf` is renamed as [`CPU.conf`](./conf_files/CPU.conf) and all the libraries (`.conf` files) are moved to the [conf_files](./conf_files) directory
-2. The description of the SBox (such as `0123456789ABCDEF`) is used automatically in the names of the C-like implementation files when `-s` is not used
-3. Minor update is made in the [Makefile](./Makefile) to suppress a warning (`utils.cpp:65:31: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]`)
+1. `software.conf` is renamed as [`CPU.conf`](./conf_files/CPU.conf) and all the libraries (`.conf` files) are moved to the [`conf_files`](./conf_files) directory
+2. The description of the SBox (such as <tt>0123456789ABCDEF</tt>) is used automatically in the names of the C-like implementation files when `-s` is not used
+3. Minor update is made in the [`Makefile`](./Makefile) to suppress a warning (`utils.cpp:65:31: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]`)
 
-## Contributors ##
+Contributors
+---
 * [Vishnu Asutosh Dasu](mailto:vishnu.asutosh@learner.manipal.edu)
 * [Anubhab Baksi](mailto:anubhab001@e.ntu.edu.sg)
 * Sumanta Sarkar
