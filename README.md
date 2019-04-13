@@ -61,6 +61,7 @@ The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](
 0. All basic functionalities are preserved — so the vanilla LIGHTER can be utilized (including the `-a` option)
 1. `software.conf` is renamed as [`CPU.conf`](./CPU.conf)
 2. The description of the SBox (such as `0123456789ABCDEF`) is used automatically in the names of the C-like implementation files
+3. The libraries (`.conf` files) are moved to the [conf_files](./conf_files) directory
 
 ## Contributors ##
 * [Vishnu Asutosh Dasu](mailto:vishnu.asutosh@learner.manipal.edu)
