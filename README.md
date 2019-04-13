@@ -8,7 +8,7 @@ by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
 
 
 
-## How to use ##
+## How to Use ##
   
    `./non-lin-search [-v] [-w] [-u] [-q]
                    [-l NUMBER] [-p NUMBER] [-r NUMBER]
@@ -33,8 +33,11 @@ by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
 See the "README-lighter" file (which is the original readme content for the vanilla LIGHTER) for more information.
 
 ## Implemented Reversible Logic Libraries ##
-| Libray        | Quantum Cost  | Two-qubit Cost  | Gate Count |
-|:-------------:|:-------------:|:---------------:|:----------:|
+|  Gates  |  Library  | Quantum Cost  | Two-qubit Cost  | Gate Count |
+|:-------:|:---------:|:-------------:|:---------------:|:----------:|
+
+See the paper for more details.
+
 
 
 ## Notes ##
