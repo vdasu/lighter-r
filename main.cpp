@@ -81,8 +81,8 @@ int gate_rnot1 = false;
 int gate_cnot1 = false;
 int gate_ccnot2 = false;
 int gate_cccnot2 = false;
-int gate_fredkin2_1 = false;
-int gate_fredkin2_2 = false;
+int gate_fredkin2_31 = false;
+int gate_fredkin2_32 = false;
 int gate_fredkin2_41 = false;
 int gate_fredkin2_42 = false;
 
@@ -90,8 +90,8 @@ int rnot1_cost;
 int cnot1_cost;
 int ccnot2_cost;
 int cccnot2_cost;
-int fredkin2_1_cost;
-int fredkin2_2_cost;
+int fredkin2_31_cost;
+int fredkin2_32_cost;
 int fredkin2_41_cost;
 int fredkin2_42_cost;
 
@@ -153,8 +153,8 @@ void reversible_gates()
   gate_cnot1 = true;
   gate_ccnot2 = true;
   gate_cccnot2 = true;
-  gate_fredkin2_1 = true;
-  gate_fredkin2_2 = true;
+  gate_fredkin2_31 = true;
+  gate_fredkin2_32 = true;
   gate_fredkin2_41 = true;
   gate_fredkin2_42 = true;
 }
@@ -169,8 +169,8 @@ int bool_op_cost(uint8_t op)
     case CNOT1             : return cnot1_cost;
     case CCNOT2            : return ccnot2_cost;
     case CCCNOT2           : return cccnot2_cost;
-    case FREDKIN2_1        : return fredkin2_1_cost;
-    case FREDKIN2_2        : return fredkin2_2_cost;
+    case FREDKIN2_31        : return fredkin2_31_cost;
+    case FREDKIN2_32        : return fredkin2_32_cost;
     case FREDKIN2_41       : return fredkin2_41_cost;
     case FREDKIN2_42       : return fredkin2_42_cost;
     
@@ -287,8 +287,8 @@ void init_b(string conf_file)
         if(key == "rnot1_cost") rnot1_cost = stod(value)*100;
         if(key == "cnot1_cost") cnot1_cost = stod(value)*100;
         if(key == "ccnot2_cost") ccnot2_cost = stod(value)*100;
-        if(key == "fredkin2_1_cost") fredkin2_1_cost = stod(value)*100;
-        if(key == "fredkin2_2_cost") fredkin2_2_cost = stod(value)*100;
+        if(key == "fredkin2_31_cost") fredkin2_31_cost = stod(value)*100;
+        if(key == "fredkin2_32_cost") fredkin2_32_cost = stod(value)*100;
       }
     }
   }
@@ -431,13 +431,13 @@ void init_b(string conf_file)
   {
     b.push_back({CCCNOT2, bool_op_cost(CCCNOT2)});
   }
-  if(gate_fredkin2_1)
+  if(gate_fredkin2_31)
   {
-    b.push_back({FREDKIN2_1, bool_op_cost(FREDKIN2_1)});
+    b.push_back({FREDKIN2_31, bool_op_cost(FREDKIN2_31)});
   }
-  if(gate_fredkin2_2)
+  if(gate_fredkin2_32)
   {
-    b.push_back({FREDKIN2_2, bool_op_cost(FREDKIN2_2)});
+    b.push_back({FREDKIN2_32, bool_op_cost(FREDKIN2_32)});
   }
   if(gate_fredkin2_41)
   {

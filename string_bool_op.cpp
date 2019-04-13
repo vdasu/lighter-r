@@ -110,8 +110,8 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
     case MAOI1_AND2  :
     case MAOI1_OR2   :
     case CCNOT2      :
-    case FREDKIN2_1  :
-    case FREDKIN2_2  :
+    case FREDKIN2_31 :
+    case FREDKIN2_32 :
           for(int k = 0; k < N; k++)
           {
             for(int j = 0; j < N; j++)
@@ -131,8 +131,8 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
                 case XOR2_ANDN2  : a = (~fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp];break;
                 case XOR2_ORN2   : a = (~fun_prev.bit_slice[k] | fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp];break;
                 case CCNOT2      : a = (fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp];break;
-                case FREDKIN2_1  : a = (~fun_prev.bit_slice[k] & fun_prev.bit_slice[tmp]) | (fun_prev.bit_slice[k] & fun_prev.bit_slice[j]);break;
-                case FREDKIN2_2  : a = (~fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) | (fun_prev.bit_slice[k] & fun_prev.bit_slice[tmp]);break;
+                case FREDKIN2_31  : a = (~fun_prev.bit_slice[k] & fun_prev.bit_slice[tmp]) | (fun_prev.bit_slice[k] & fun_prev.bit_slice[j]);break;
+                case FREDKIN2_32  : a = (~fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) | (fun_prev.bit_slice[k] & fun_prev.bit_slice[tmp]);break;
               }
               if(!reverse) b = f.bit_slice[f.info_line];
               else b = f.prev;
@@ -311,8 +311,8 @@ string bool_op_base_string(uint8_t op)
       case CNOT1             : return feq+"CNOT1(F[], F[]);\n";
       case CCNOT2            : return feq+"CCNOT2(F[], F[], F[]);\n";
       case CCCNOT2           : return feq+"CCCNOT2(F[], F[], F[]);\n";
-      case FREDKIN2_1        : return feq+"FREDKIN2_1(F[], F[], F[]);\n";
-      case FREDKIN2_2        : return feq+"FREDKIN2_2(F[], F[], F[]);\n";
+      case FREDKIN2_31       : return feq+"FREDKIN2_31(F[], F[], F[]);\n";
+      case FREDKIN2_32       : return feq+"FREDKIN2_32(F[], F[], F[]);\n";
       case FREDKIN2_41       : return feq+"FREDKIN2_41(F[], F[], F[], F[]);\n";
       case FREDKIN2_42       : return feq+"FREDKIN2_42(F[], F[], F[], F[]);\n";
 
@@ -413,10 +413,10 @@ string bool_op_to_string(const function_t f, uint8_t op, bool reverse)
     case MOAI1_OR2      :
     case MOAI1_NAND3    :
     case MOAI1_NOR3     :
-    case MOAI1_AND3    :
-    case MOAI1_OR3     :
-    case MAOI1_AND3    :
-    case MAOI1_OR3     :
+    case MOAI1_AND3     :
+    case MOAI1_OR3      :
+    case MAOI1_AND3     :
+    case MAOI1_OR3      :
     case MAOI1_NAND3    :
     case MAOI1_NOR3     :
     case XOR2_AND2      :
@@ -431,8 +431,8 @@ string bool_op_to_string(const function_t f, uint8_t op, bool reverse)
     case MAOI1_OR2      :
     case CCNOT2         :
     case CCCNOT2        :
-    case FREDKIN2_1     :
-    case FREDKIN2_2     :
+    case FREDKIN2_31    :
+    case FREDKIN2_32    :
     case FREDKIN2_41    :
     case FREDKIN2_42    :
     return bool_op_super_gates(f, op, bool_op_base_string(op), reverse);
