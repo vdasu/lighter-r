@@ -14,7 +14,7 @@ by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
    `./non-lin-search [-v] [-w] [-u] [-q]
                    [-l NUMBER] [-p NUMBER] [-r NUMBER]
                    [-i SBOX] [-o SBOX]
-                   [-f FILE]`
+                   [-f FILE] [-s IMPLEMENTATION_ID]`
 
     -v : Verbose mode
     -u : Expand only [-i] function (identity function by default)
@@ -30,6 +30,7 @@ by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
     -o <function> : Define arrival function
 
     -f <file> : Define which logic library you want to use
+    -s <string> : Define implementation id
 
 See the paper on LIGHTER for more information.
 
