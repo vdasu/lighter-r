@@ -3,3 +3,5 @@
 non-lin-search
 test
 implementation*
+RCViewer+.exe
+test_sbox_from_implementation_c.py
