@@ -59,10 +59,9 @@ The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](
 ### Changes Made in Vanilla LIGHTER ###
 
 0. All basic functionalities are preserved — so the vanilla LIGHTER can be utilized (including the `-a` option)
-1. `software.conf` is renamed as [`CPU.conf`](./CPU.conf)
-2. The description of the SBox (such as `0123456789ABCDEF`) is used automatically in the names of the C-like implementation files
-3. The libraries (`.conf` files) are moved to the [conf_files](./conf_files) directory
-4. Minor update in the [Makefile](./Makefile) to suppress an output (`utils.cpp:65:31: warning: ignoring return value of ‘int system(const char*)`)
+1. `software.conf` is renamed as [`CPU.conf`](./conf_files/CPU.conf) and all the libraries (`.conf` files) are moved to the [conf_files](./conf_files) directory
+2. The description of the SBox (such as `0123456789ABCDEF`) is used automatically in the names of the C-like implementation files when `-s` is not used
+3. Minor update is made in the [Makefile](./Makefile) to suppress an output (`utils.cpp:65:31: warning: ignoring return value of ‘int system(const char*)`)
 
 ## Contributors ##
 * [Vishnu Asutosh Dasu](mailto:vishnu.asutosh@learner.manipal.edu)
