@@ -11,16 +11,16 @@ by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
 ## How to Use ##
 
 ### Command Line Usage ###
-   `./non-lin-search [-v] [-w] [-u] [-q]
+    ./non-lin-search [-v] [-w] [-u] [-q]
                    [-l NUMBER] [-p NUMBER] [-r NUMBER]
                    [-i SBOX] [-o SBOX]
-                   [-f FILE] [-s IMPLEMENTATION_ID]`
+                   [-f FILE] [-s IMPLEMENTATION_ID]
 
     -v : Verbose mode
     -u : Expand only [-i] function (identity function by default)
     -w : Write graphe in file
     
-    -q : Enable all reversible gates 
+    -q : Enable all reversible gates (essential for LIGHTER-R)
 
     -l <value> : Define an upper bound on the cost of the implementations generated
     -p <value> : Define the number of threads used
@@ -33,15 +33,18 @@ by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
 
     -s <string> : Define implementation ID
 
-Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER.
+Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER; and the `-a` option is omitted. The `-q` option is necessary for LIGHTER-R to work; and the 
 
 ### Examples ###
 
 ## Implemented Reversible Logic Gates ##
-|   Gate   |      Library     | Quantum Cost  | Two-qubit Cost  | Gate Count |
-|:--------:|:----------------:|:-------------:|:---------------:|:----------:|
-|   NOT   | NCT/ MCT/ MCT+MCF |        1      |         0        |    
-
+|            Gate            |      Library      |  Quantum Cost  | Two-qubit Cost  | Gate Count |
+|:--------------------------:|:-----------------:|:--------------:|:---------------:|:----------:|
+|   NOT (Tof<sub>1</sub>)    | NCT/ MCT/ MCT+MCF |         1      |         0       |     1      |
+|   CNOT  (Tof<sub>2</sub>)  | NCT/ MCT/ MCT+MCF |         1      |         1       |     1      |
+| CCNOT (Tof<sub>3</sub>)    |    MCT/ MCT+MCF   |         5      |         5       |     1      |
+|     Fred<sub>3</sub>       |    MCF/ MCT+MCF   |         7      |         5       |     1      |
+|     Fred<sub>4</sub>       |    MCF/ MCT+MCF   |        15      |         5       |     1      |
 
 
 ## Notes ##
