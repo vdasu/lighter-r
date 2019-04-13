@@ -38,7 +38,7 @@ See the "README-lighter" file (which is the original readme content for the vani
 
 
 ## Notes ##
-1. The `-a` options should not be used while proceesing LIGHTER-R (i.e., with the `-q` option). 
+1. The `-a` option should not be used while proceesing LIGHTER-R (i.e., with the `-q` option). 
 2. As the Fredkin gates have more than one effective output lines (the output lines which are not readily any input line), those gates are implemented separately.
 3. *The source codes come with no warranty. See the LICENSE file for more details.*
 4. *We invite you to contribute: Please feel free to suggest/contribute new changes or fix bugs or add documentation.*
