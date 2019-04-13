@@ -502,12 +502,12 @@ int main(int argc, char *argv[])
       case 'u': one_expand = true; break;
       case 'w': write_in_file = true; break;
       case 'i': f1 = parse_function(optarg); break;
-      case 'o': f2 = parse_function(optarg); implementation_id += optarg; implementation_id += "_"; break;
+      case 'o': f2 = parse_function(optarg); implementation_id = "_"; implementation_id += optarg; implementation_id += "_"; break;
       case 'l': l = abs(atoi(optarg))*50; cout << "Lambda : "<< optarg << endl; break;
       case 'p': omp_nb_threads = (atoi(optarg));  cout << "Thread number : "<< omp_nb_threads<<endl;break;
       case 'f': conf_file = optarg; break;
       case 'r': max_ram = atoi(optarg); break;
-      case 's': implementation_id += optarg; implementation_id += "_"; break;
+      case 's': implementation_id = "_"; implementation_id += optarg; implementation_id += "_"; break;
       case '?': fprintf(stderr, "wrong cmd line");
     }
   }
