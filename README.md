@@ -6,7 +6,7 @@ The source codes, hosted at [GitHub](https://github.com/vdasu/lighter-r), are a 
 **Optimizing SBoxes For Circuit Implementation: From Classical To Reversible**
 by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
 
-
+Please feel free to suggest/contribute new features or fix bugs or add documentation.
 
 ## How to Use ##
 
@@ -29,9 +29,9 @@ by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
     -i <function> : Define start function
     -o <function> : Define arrival function
 
-    -f <file> : Define the logic library with a cost metric
+    -f <file> : Define the logic library with the associated cost metric
 
-    -s <string> : Define implementation ID
+    -s <string> : Define implementation information
 
 Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER; and the `-a` option is omitted. The `-q` option is necessary for LIGHTER-R to work; and the `-s` option takes a string (such as the cipher name) and associates the string to the names of the C-like implementation files.
 
@@ -48,19 +48,19 @@ Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER; and
 |     Fred<sub>3</sub>       |    MCF/ MCT+MCF   |      7      |         5       |     1      |
 |     Fred<sub>4</sub>       |    MCF/ MCT+MCF   |      15     |         5       |     1      |
 
-The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](https://ceit.aut.ac.ir/QDA/RCV.htm) (version 2.5) tool. The two-qubit cost for the Fred 4 gate is shown as −5 in it. We treat this as an editorial mistake and consider the cost as 5.
+The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](https://ceit.aut.ac.ir/QDA/RCV.htm) (version 2.5) tool. It shows the two-qubit cost for the Fred 4 gate is shown as −5, we treat this as an editorial mistake and consider the cost as 5.
 
 ## Notes ##
 1. The `-a` option should not be used while proceesing LIGHTER-R (i.e., together with `-q`). 
 2. As the Fredkin gates have more than one effective output lines (the output lines which are not readily any input line), those gates are implemented separately.
 3. *The source codes come with no warranty. See the [LICENSE](./LICENSE) file for more details.*
-4. *We invite you to contribute: Please feel free to suggest/contribute new changes or fix bugs or add documentation.*
+
 
 ### Changes Made in Vanilla LIGHTER ###
 
-0. All basic functionalities are preserved — so the vanilla LIGHTER can be utilized (including `-a` option)
+0. All basic functionalities are preserved — so the vanilla LIGHTER can be utilized (including the `-a` option)
 1. `software.conf` is renamed as [`CPU.conf`](./CPU.conf)
-2. The description of the SBox (such as `0123456789ABCDEF`) is used automatically to the names of the C-like implementation files
+2. The description of the SBox (such as `0123456789ABCDEF`) is used automatically in the names of the C-like implementation files
 
 ## Contributors ##
 * [Vishnu Asutosh Dasu](mailto:vishnu.asutosh@learner.manipal.edu)
