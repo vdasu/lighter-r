@@ -10,7 +10,7 @@ by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
 
 ## How to Use ##
 
-### Command ###
+### Command Line Usage ###
    `./non-lin-search [-v] [-w] [-u] [-q]
                    [-l NUMBER] [-p NUMBER] [-r NUMBER]
                    [-i SBOX] [-o SBOX]
@@ -20,7 +20,7 @@ by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
     -u : Expand only [-i] function (identity function by default)
     -w : Write graphe in file
     
-    -q : Enable all reversible gates
+    -q : Enable all reversible gates 
 
     -l <value> : Define an upper bound on the cost of the implementations generated
     -p <value> : Define the number of threads used
@@ -30,25 +30,24 @@ by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
     -o <function> : Define arrival function
 
     -f <file> : Define which logic library you want to use
-    -s <string> : Define implementation id
 
-See the paper on LIGHTER for more information.
+    -s <string> : Define implementation ID
+
+Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER.
 
 ### Examples ###
 
 ## Implemented Reversible Logic Gates ##
 |   Gate   |      Library     | Quantum Cost  | Two-qubit Cost  | Gate Count |
 |:--------:|:----------------:|:-------------:|:---------------:|:----------:|
-|   NOT   | NCT/ MCT/ MCT+MCF | 
-
-See the paper for more details.
+|   NOT   | NCT/ MCT/ MCT+MCF |        1      |         0        |    
 
 
 
 ## Notes ##
 1. The `-a` option should not be used while proceesing LIGHTER-R. 
 2. As the Fredkin gates have more than one effective output lines (the output lines which are not readily any input line), those gates are implemented separately.
-3. *The source codes come with no warranty. See the "LICENSE" file for more details.*
+3. *The source codes come with no warranty. See the [LICENSE](./LICENSE) file for more details.*
 4. *We invite you to contribute: Please feel free to suggest/contribute new changes or fix bugs or add documentation.*
 
 ## Contributors ##
