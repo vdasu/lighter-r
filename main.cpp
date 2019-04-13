@@ -169,8 +169,8 @@ int bool_op_cost(uint8_t op)
     case CNOT1             : return cnot1_cost;
     case CCNOT2            : return ccnot2_cost;
     case CCCNOT2           : return cccnot2_cost;
-    case FREDKIN2_31        : return fredkin2_31_cost;
-    case FREDKIN2_32        : return fredkin2_32_cost;
+    case FREDKIN2_31       : return fredkin2_31_cost;
+    case FREDKIN2_32       : return fredkin2_32_cost;
     case FREDKIN2_41       : return fredkin2_41_cost;
     case FREDKIN2_42       : return fredkin2_42_cost;
     
@@ -282,13 +282,14 @@ void init_b(string conf_file)
         if(key == "or3_cost") or3_cost = stod(value)*100;
         if(key == "andn2_cost") andn2_cost = stod(value)*100;
         if(key == "orn2_cost") orn2_cost = stod(value)*100;
-
-        //Reversible gates
         if(key == "rnot1_cost") rnot1_cost = stod(value)*100;
         if(key == "cnot1_cost") cnot1_cost = stod(value)*100;
         if(key == "ccnot2_cost") ccnot2_cost = stod(value)*100;
+        if(key == "cccnot2_cost") cccnot2_cost = stod(value)*100;
         if(key == "fredkin2_31_cost") fredkin2_31_cost = stod(value)*100;
         if(key == "fredkin2_32_cost") fredkin2_32_cost = stod(value)*100;
+        if(key == "fredkin2_41_cost") fredkin2_41_cost = stod(value)*100;
+        if(key == "fredkin2_42_cost") fredkin2_42_cost = stod(value)*100;
       }
     }
   }
