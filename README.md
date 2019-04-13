@@ -35,10 +35,10 @@ See the "README-lighter" file (which is the original readme content for the vani
 
 ### Examples ###
 
-## Implemented Reversible Logic Libraries ##
+## Implemented Reversible Logic Gates ##
 |  Gates  |      Library     | Quantum Cost  | Two-qubit Cost  | Gate Count |
 |:-------:|:----------------:|:-------------:|:---------------:|:----------:|
-|   NOT   | NCT, MCT, MCT+MCF | 
+|   NOT   | NCT/ MCT/ MCT+MCF | 
 
 See the paper for more details.
 
