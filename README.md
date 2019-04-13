@@ -31,7 +31,7 @@ by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
 
     -f <file> : Define which logic library you want to use
 
-See the "README-lighter" file (which is the original readme content for the vanilla LIGHTER) for more information.
+See the paper on LIGHTER for more information.
 
 ### Examples ###
 
