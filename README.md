@@ -38,6 +38,7 @@ Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER; and
 ### Examples ###
 
 ## Implemented Reversible Logic Gates ##
+
 |            Gate            |      Library      |  Quantum Cost  | Two-qubit Cost  | Gate Count |
 |:--------------------------:|:-----------------:|:--------------:|:---------------:|:----------:|
 |   NOT (Tof<sub>1</sub>)    | NCT/ MCT/ MCT+MCF |         1      |         0       |     1      |
@@ -46,6 +47,7 @@ Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER; and
 |     Fred<sub>3</sub>       |    MCF/ MCT+MCF   |         7      |         5       |     1      |
 |     Fred<sub>4</sub>       |    MCF/ MCT+MCF   |        15      |         5       |     1      |
 
+The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](https://ceit.aut.ac.ir/QDA/RCV.htm) version 2.5 tool. The two-qubit cost for the Fred 4 gate is shown as −5 in RCVIWER+. We treat this as an editorial mistake and consider the cost as 5.
 
 ## Notes ##
 1. The `-a` option should not be used while proceesing LIGHTER-R. 
