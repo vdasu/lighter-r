@@ -51,16 +51,16 @@ Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER; and
 The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](https://ceit.aut.ac.ir/QDA/RCV.htm) (version 2.5) tool. It shows the two-qubit cost for the Fred<sub>4</sub> gate as −5, we treat this as an editorial mistake and consider the cost as 5.
 
 ### Naming Convention ###
+The number following the logic gate symbol denotes the number of primitive logic gates used to implement the gate. For example, CNOT1 uses 1 XOR gate in its implementation. The 3 and 4 in the symbol for the FREDKIN gates represent the input size in bits. The 1 and 2 denote which output line is being used. For example, FREDKIN2_32 is the symbol for the 3 bit FREDKIN gate where the second output line is used.
 
 ## Notes ##
 
-1. The `-a` option should not be used while proceesing LIGHTER-R (i.e., together with `-q`)
+1. The `-a` option should not be used while proceesing LIGHTER-R (i.e., together with `-q`).
 2. As the Fredkin gates have more than one effective output lines (the output lines which are not readily any input line), those gates are implemented separately:
     1. Fred<sub>3</sub>
     2. Fred<sub>4</sub>
-3. The Peres (Per<sub>3</sub>) gate is implemented in the [peres](https://github.com/vdasu/lighter-r/tree/peres) branch, but this brance is not under active development
-4. LIGHTER doesn't support logic gates with 0 cost. The cost for the NOT (Tof<sub>1</sub>) gate has been substituted for 0.01 instead in all three libraries i.e NCT, MCT and MCT+MCF
-5. The number following the logic gate symbol denotes the number of primitive logic gates used to implement the gate. For example, CNOT1 uses 1 XOR gate in its implementation. The 3 and 4 in the symbol for the FREDKIN gates represent the input size in bits. The 1 and 2 denote which output line is being used. For example, FREDKIN2_32 is the symbol for the 3 bit FREDKIN gate where the second output line is used
+3. The Peres (Per<sub>3</sub>) gate is implemented in the [peres](https://github.com/vdasu/lighter-r/tree/peres) branch, but this brance is not under active development.
+4. LIGHTER doesn't support logic gates with 0 cost. The cost for the NOT (Tof<sub>1</sub>) gate has been substituted for 0.01 instead in all three libraries i.e NCT, MCT and MCT+MCF.
 
 ### Changes From Vanilla LIGHTER ###
 
