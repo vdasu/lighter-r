@@ -1,6 +1,6 @@
 
 # LIGHTER-R #
-LIGHTER-R is a tool to (near-)optimally implement a given 4 × 4 SBox in using logic gates from a reversible logic library (with an associated cost metric). This is an extension of the tool LIGHTER [[original publication](https://tosc.iacr.org/index.php/ToSC/article/view/806), [archived publication](https://eprint.iacr.org/2017/101), [source codes](http://jeremy.jean.free.fr/pub/fse2018_layer_implementations.tar.gz)]; which only works for 4 × 4 SBoxes the classical computing paradigm, namely for ASIC and CPU implementations. 
+LIGHTER-R is a tool to (near-)optimally implement a given 4 × 4 SBox using logic gates from a reversible logic library (with an associated cost metric). This is an extension of the tool LIGHTER [[original publication](https://tosc.iacr.org/index.php/ToSC/article/view/806), [archived publication](https://eprint.iacr.org/2017/101), [source codes](http://jeremy.jean.free.fr/pub/fse2018_layer_implementations.tar.gz)]; which only works for 4 × 4 SBoxes the classical computing paradigm, namely for ASIC and CPU implementations. 
 
 The source codes, hosted at [GitHub](https://github.com/vdasu/lighter-r), are a supporting component for the paper:
 **Optimizing SBoxes For Circuit Implementation: From Classical To Reversible**
@@ -59,6 +59,8 @@ The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](
     1. Fred<sub>3</sub>
     2. Fred<sub>4</sub>
 3. The Peres (Per<sub>3</sub>) gate is implemented in the [peres](https://github.com/vdasu/lighter-r/tree/peres) branch, but this brance is not under active development
+4. LIGHTER doesn't support logic gates with 0 cost. The cost for the NOT (Tof<sub>1</sub>) has been substituted for 0.01 instead in all three libraries i.e NCT, MCT and MCT+MCF
+5. The number following the logic gate symbol denotes the number of primitive logic gates used to implement the gate. For example, CNOT1 uses 1 XOR gate in its implementation. The 3 and 4 in the symbol for the FREDKIN gates represent the input size in bits. The 1 and 2 denote which output line is being used. For example, FREDKIN2_32 is the symbol for the 3 bit FREDKIN gate where the second output line is used.
 
 ### Changes From Vanilla LIGHTER ###
 
