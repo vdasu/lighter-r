@@ -59,8 +59,6 @@ The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](
     1. Fred<sub>3</sub>
     2. Fred<sub>4</sub>
 3. The Peres (Per<sub>3</sub>) gate is implemented in the [peres](https://github.com/vdasu/lighter-r/tree/peres) branch, but this brance is not under active development
-4. *The source codes come with no warranty. See the [LICENSE](./LICENSE) file for more details*
-
 
 ### Changes From Vanilla LIGHTER ###
 
