@@ -41,12 +41,12 @@ Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER; and
 
 |            Gate            |      Library      |Quantum Cost | Two-qubit Cost  | Gate Count |   Symbol     |
 |:--------------------------:|:-----------------:|:-----------:|:---------------:|:----------:|:------------:|
-|   NOT (Tof<sub>1</sub>)    | NCT/ MCT/ MCT+MCF |      1      |         0       |     1      |  |
-|   CNOT  (Tof<sub>2</sub>)  | NCT/ MCT/ MCT+MCF |      1      |         1       |     1      |  |
-|  CCNOT (Tof<sub>3</sub>)   | NCT/ MCT/ MCT+MCF |      5      |         5       |     1      |  |
-|      Tof<sub>4</sub>       |    MCT/ MCT+MCF   |      13     |         5       |     1      |  |
-|     Fred<sub>3</sub>       |    MCF/ MCT+MCF   |      7      |         5       |     1      |  |
-|     Fred<sub>4</sub>       |    MCF/ MCT+MCF   |      15     |         5       |     1      |  |
+|   NOT (Tof<sub>1</sub>)    | NCT/ MCT/ MCT+MCF |      1      |         0       |     1      |     RNOT1    |
+|   CNOT  (Tof<sub>2</sub>)  | NCT/ MCT/ MCT+MCF |      1      |         1       |     1      |     CNOT1    |
+|  CCNOT (Tof<sub>3</sub>)   | NCT/ MCT/ MCT+MCF |      5      |         5       |     1      |     CCNOT2   |
+|      Tof<sub>4</sub>       |    MCT/ MCT+MCF   |      13     |         5       |     1      |     CCCNOT2  |
+|     Fred<sub>3</sub>       |    MCF/ MCT+MCF   |      7      |         5       |     1      |  FREDKIN2_3  |
+|     Fred<sub>4</sub>       |    MCF/ MCT+MCF   |      15     |         5       |     1      |  FREDKIN2_4  |
 
 The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](https://ceit.aut.ac.ir/QDA/RCV.htm) (version 2.5) tool. It shows the two-qubit cost for the Fred<sub>4</sub> gate as −5, we treat this as an editorial mistake and consider the cost as 5.
 
@@ -62,10 +62,10 @@ The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](
 
 ### Changes From Vanilla LIGHTER ###
 
-0. All basic functionalities are preserved — so the vanilla LIGHTER can be utilized (including the `-a` option)
-1. `software.conf` is renamed as [`CPU.conf`](./conf_files/CPU.conf) and all the libraries (`.conf` files) are moved to the [conf_files](./conf_files) directory
-2. The description of the SBox (such as <tt>0123456789ABCDEF</tt>) is used automatically in the names of the C-like implementation files when `-s` is not used
-3. Minor update is made in the [`Makefile`](./Makefile) to suppress a warning (`utils.cpp:65:31: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]`)
+1. All basic functionalities are preserved — so the vanilla LIGHTER can be utilized (including the `-a` option)
+2. `software.conf` is renamed as [`CPU.conf`](./conf_files/CPU.conf) and all the libraries (`.conf` files) are moved to the [conf_files](./conf_files) directory
+3. The description of the SBox (such as <tt>0123456789ABCDEF</tt>) is used automatically in the names of the C-like implementation files when `-s` is not used
+4. Minor update is made in the [`Makefile`](./Makefile) to suppress a warning (`utils.cpp:65:31: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]`)
 
 Contributors
 ---
