@@ -95,6 +95,7 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
   else tmp = f.info_line;
 
   UINT_ a = 0, b;
+  bool is_ccnot2 = false, is_cccnot2 = false;
   switch(operation)
   {
     case MOAI1_AND2  :
@@ -130,7 +131,7 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
                 case MOAI1_NOR2  : a = (fun_prev.bit_slice[k] | fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp];break;
                 case XOR2_ANDN2  : a = (~fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp];break;
                 case XOR2_ORN2   : a = (~fun_prev.bit_slice[k] | fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp];break;
-                case CCNOT2      : a = (fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp];break;
+                case CCNOT2      : a = (fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp]; is_ccnot2 = true; break;
                 case FREDKIN2_31  : a = (~fun_prev.bit_slice[k] & fun_prev.bit_slice[tmp]) | (fun_prev.bit_slice[k] & fun_prev.bit_slice[j]);break;
                 case FREDKIN2_32  : a = (~fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) | (fun_prev.bit_slice[k] & fun_prev.bit_slice[tmp]);break;
               }
@@ -138,7 +139,8 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
               else b = f.prev;
               if( a == b )
               {
-                write_c(&s, {tmp, k, j});
+                if(is_ccnot2) write_c(&s, {j, k, tmp});
+                else write_c(&s, {tmp, k, j});
                 return s;
               }
             }
@@ -190,7 +192,7 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
                   case MAOI1_NOR2_OR2   :
                   case MOAI1_OR2_OR2    :
                   case MAOI1_NOR3       : a = ~(fun_prev.bit_slice[k]|fun_prev.bit_slice[j]|fun_prev.bit_slice[l])^fun_prev.bit_slice[tmp];break;
-                  case CCCNOT2          : a = (fun_prev.bit_slice[k]&fun_prev.bit_slice[j]&fun_prev.bit_slice[l])^fun_prev.bit_slice[tmp];break;
+                  case CCCNOT2          : a = (fun_prev.bit_slice[k]&fun_prev.bit_slice[j]&fun_prev.bit_slice[l])^fun_prev.bit_slice[tmp]; is_cccnot2 = true; break;
                   case FREDKIN2_41      : a = (~(fun_prev.bit_slice[k]&fun_prev.bit_slice[j]&fun_prev.bit_slice[l])) | 
                                               (fun_prev.bit_slice[k]&fun_prev.bit_slice[j]&fun_prev.bit_slice[tmp]);break;
                   case FREDKIN2_42      : a = (~(fun_prev.bit_slice[k]&fun_prev.bit_slice[j]&fun_prev.bit_slice[tmp])) | 
@@ -200,7 +202,8 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
                 else b = f.prev;
                 if( a == b )
                 {
-                  write_c(&s, {tmp, l, j, k});
+                  if(is_cccnot2) write_c(&s, {k, j, l, tmp});
+                  else write_c(&s, {tmp, l, j, k});
                   return s;
                 }
               }
