@@ -62,7 +62,7 @@ The number following the logic gate symbol denotes the number of primitive logic
 ### Changes From Vanilla LIGHTER ###
 
 1. All basic functionalities are preserved — so the vanilla LIGHTER can be utilized (including the `-a` option)
-2. `software.conf` is renamed as [`CPU.conf`](./conf_files/CPU.conf) and all the libraries (`.conf` files) are moved to the [libraries](./libraries) directory
+2. `software.conf` is renamed as [`CPU.conf`](./libraries/CPU.conf) and all the libraries (`.conf` files) are moved to the [libraries](./libraries) directory
 3. The description of the SBox (such as <tt>0123456789ABCDEF</tt>) is used automatically in the names of the C-like implementation files when `-s` is not used
 4. Minor update is made in the [`Makefile`](./Makefile) to suppress a warning (`utils.cpp:65:31: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]`)
 
