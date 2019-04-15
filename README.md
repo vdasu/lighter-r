@@ -56,11 +56,8 @@ The number following the logic gate symbol denotes the number of primitive logic
 ## Notes ##
 
 1. The `-a` option should not be used while proceesing LIGHTER-R (i.e., together with `-q`).
-2. As the Fredkin gates have more than one effective output lines (the output lines which are not readily any input line), those gates are implemented separately:
-    1. Fred<sub>3</sub>
-    2. Fred<sub>4</sub>
-3. The Peres (Per<sub>3</sub>) gate is implemented in the [peres](https://github.com/vdasu/lighter-r/tree/peres) branch, but this brance is not under active development.
-4. LIGHTER doesn't support logic gates with 0 cost. The cost for the NOT (Tof<sub>1</sub>) gate has been substituted for 0.01 instead in all three libraries i.e NCT, MCT and MCT+MCF.
+2. The Peres (Per<sub>3</sub>) gate is implemented in the [peres](https://github.com/vdasu/lighter-r/tree/peres) branch, but this brance is not under active development.
+3. LIGHTER doesn't support logic gates with 0 cost. The cost for the NOT (Tof<sub>1</sub>) gate has been substituted for 0.01 instead in all three libraries i.e NCT, MCT and MCT+MCF.
 
 ### Changes From Vanilla LIGHTER ###
 
