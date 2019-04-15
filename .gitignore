@@ -7,3 +7,4 @@ test_*c.py
 test*crosscheck*
 RCViewer+.exe
 test.tfc
+t-count.py
