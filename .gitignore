@@ -8,3 +8,4 @@ test*crosscheck*
 RCViewer+.exe
 test.tfc
 t-count.py
+rcv_benchmarks*
