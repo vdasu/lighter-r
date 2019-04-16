@@ -57,7 +57,7 @@ The number following the logic gate symbol denotes the number of primitive logic
 
 1. The `-a` option should not be used while proceesing LIGHTER-R (i.e., together with `-q`).
 2. The Peres (Per<sub>3</sub>) gate is implemented in the [peres](https://github.com/vdasu/lighter-r/tree/peres) branch, but this brance is not under active development.
-3. LIGHTER doesn't support logic gates with 0 cost. The cost for the NOT (Tof<sub>1</sub>) gate has been substituted for 0.01 instead in all three libraries i.e NCT, MCT and MCT+MCF.
+3. Apparently LIGHTER does not support logic gates with 0 cost. Through empirical tests, we observe that it does not work (basically, prints nothing) if the cost is less than 0.01. For this reason, the cost for the NOT (Tof<sub>1</sub>) gate has been substituted for 0.01 instead in all three libraries i.e NCT, MCT and MCT+MCF.
 
 ### Changes From Vanilla LIGHTER ###
 
