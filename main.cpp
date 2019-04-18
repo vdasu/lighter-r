@@ -516,11 +516,7 @@ int main(int argc, char *argv[])
   cout << "To   : " << f2.to_string() << endl;
 
   init_b(conf_file);
-  // mitm(f1, f2, l);
-
-  for(auto i:b) {
-    cout<<i.op_id<<" "<<i.op_cost<<"\n";
-  }
+  mitm(f1, f2, l);
 
   return 0;
 }
