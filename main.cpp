@@ -416,35 +416,35 @@ void init_b(string conf_file)
     }
   }
 
-  if(gate_rnot1) 
+  if(gate_rnot1 && bool_op_cost(RNOT1)) 
   {
     b.push_back({RNOT1, bool_op_cost(RNOT1)});
   }
-  if(gate_cnot1) 
+  if(gate_cnot1 && bool_op_cost(CNOT1)) 
   {
     b.push_back({CNOT1, bool_op_cost(CNOT1)});
   }
-  if(gate_ccnot2)
+  if(gate_ccnot2 && bool_op_cost(CCNOT2))
   {
     b.push_back({CCNOT2, bool_op_cost(CCNOT2)});
   }
-  if(gate_cccnot2)
+  if(gate_cccnot2 && bool_op_cost(CCCNOT2))
   {
     b.push_back({CCCNOT2, bool_op_cost(CCCNOT2)});
   }
-  if(gate_fredkin2_31)
+  if(gate_fredkin2_31 && bool_op_cost(FREDKIN2_31))
   {
     b.push_back({FREDKIN2_31, bool_op_cost(FREDKIN2_31)});
   }
-  if(gate_fredkin2_32)
+  if(gate_fredkin2_32 && bool_op_cost(FREDKIN2_32))
   {
     b.push_back({FREDKIN2_32, bool_op_cost(FREDKIN2_32)});
   }
-  if(gate_fredkin2_41)
+  if(gate_fredkin2_41 && bool_op_cost(FREDKIN2_41))
   {
     b.push_back({FREDKIN2_41, bool_op_cost(FREDKIN2_41)});
   }
-  if(gate_fredkin2_42)
+  if(gate_fredkin2_42 && bool_op_cost(FREDKIN2_42))
   {
     b.push_back({FREDKIN2_42, bool_op_cost(FREDKIN2_42)});
   }
@@ -516,7 +516,11 @@ int main(int argc, char *argv[])
   cout << "To   : " << f2.to_string() << endl;
 
   init_b(conf_file);
-  mitm(f1, f2, l);
+  // mitm(f1, f2, l);
+
+  for(auto i:b) {
+    cout<<i.op_id<<" "<<i.op_cost<<"\n";
+  }
 
   return 0;
 }
