@@ -193,9 +193,9 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
                   case MOAI1_OR2_OR2    :
                   case MAOI1_NOR3       : a = ~(fun_prev.bit_slice[k]|fun_prev.bit_slice[j]|fun_prev.bit_slice[l])^fun_prev.bit_slice[tmp];break;
                   case CCCNOT2          : a = (fun_prev.bit_slice[k]&fun_prev.bit_slice[j]&fun_prev.bit_slice[l])^fun_prev.bit_slice[tmp]; is_cccnot2 = true; break;
-                  case FREDKIN2_41      : a = (~(fun_prev.bit_slice[k]&fun_prev.bit_slice[j]&fun_prev.bit_slice[l])) | 
+                  case FREDKIN2_41      : a = (~(fun_prev.bit_slice[k]&fun_prev.bit_slice[j])&fun_prev.bit_slice[l]) | 
                                               (fun_prev.bit_slice[k]&fun_prev.bit_slice[j]&fun_prev.bit_slice[tmp]);break;
-                  case FREDKIN2_42      : a = (~(fun_prev.bit_slice[k]&fun_prev.bit_slice[j]&fun_prev.bit_slice[tmp])) | 
+                  case FREDKIN2_42      : a = (~(fun_prev.bit_slice[k]&fun_prev.bit_slice[j])&fun_prev.bit_slice[tmp]) | 
                                               (fun_prev.bit_slice[k]&fun_prev.bit_slice[j]&fun_prev.bit_slice[l]);break;            
                 }
                 if(!reverse) b = f.bit_slice[f.info_line];

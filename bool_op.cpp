@@ -163,20 +163,20 @@ void bool_op_double_gates(function_t f, vector<function_t> *v, int operation)
                                 break;
                               }
       case FREDKIN2_41     : {
-                                fun_tmp.bit_slice[i] = (~(f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[(i+c)%N])) | 
+                                fun_tmp.bit_slice[i] = (~(f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N])&f.bit_slice[(i+c)%N]) | 
                                                         (f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[i]);
                                 int _ = f.bit_slice[(i+a)%N];
                                 int __ = f.bit_slice[(i+b)%N];
-                                int ___ = (~(f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[i])) | 
+                                int ___ = (~(f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N])&f.bit_slice[i]) | 
                                           (f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[(i+c)%N]);
                                 break;
                              }
       case FREDKIN2_42    : {
-                                fun_tmp.bit_slice[i] = (~(f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[i])) | 
+                                fun_tmp.bit_slice[i] = (~(f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N])&f.bit_slice[i]) | 
                                                         (f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[(i+c)%N]);
                                 int _ = f.bit_slice[(i+a)%N];
                                 int __ = f.bit_slice[(i+b)%N];
-                                int ___ = (~(f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[(i+c)%N])) | 
+                                int ___ = (~(f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N])&f.bit_slice[(i+c)%N]) | 
                                           (f.bit_slice[(i+a)%N]&f.bit_slice[(i+b)%N]&f.bit_slice[i]);
                                 break;
                              }
