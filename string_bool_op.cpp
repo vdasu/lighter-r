@@ -139,7 +139,7 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
               else b = f.prev;
               if( a == b )
               {
-                if(is_ccnot2) write_c(&s, {j, k, tmp});
+                if(is_ccnot2) { write_c(&s, {j, k, tmp}); is_ccnot2 = false; }
                 else write_c(&s, {tmp, k, j});
                 return s;
               }
@@ -202,7 +202,7 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
                 else b = f.prev;
                 if( a == b )
                 {
-                  if(is_cccnot2) write_c(&s, {k, j, l, tmp});
+                  if(is_cccnot2) { write_c(&s, {k, j, l, tmp}); is_cccnot2 = false; }
                   else write_c(&s, {tmp, l, j, k});
                   return s;
                 }
@@ -313,7 +313,7 @@ string bool_op_base_string(uint8_t op)
       case RNOT1             : return feq+"RNOT1(F[]);\n";
       case CNOT1             : return feq+"CNOT1(F[], F[]);\n";
       case CCNOT2            : return feq+"CCNOT2(F[], F[], F[]);\n";
-      case CCCNOT2           : return feq+"CCCNOT2(F[], F[], F[]);\n";
+      case CCCNOT2           : return feq+"CCCNOT2(F[], F[], F[], F[]);\n";
       case FREDKIN2_31       : return feq+"FREDKIN2_31(F[], F[], F[]);\n";
       case FREDKIN2_32       : return feq+"FREDKIN2_32(F[], F[], F[]);\n";
       case FREDKIN2_41       : return feq+"FREDKIN2_41(F[], F[], F[], F[]);\n";
