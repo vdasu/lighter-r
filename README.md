@@ -36,6 +36,8 @@ Please feel free to suggest/contribute new features or fix bugs or add documenta
 Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER; and the `-a` option is omitted. The `-q` option is necessary for LIGHTER-R to work; and the `-s` option takes a string (such as the cipher name) and associates the string to the names of the C-like implementation files.
 
 ### Examples ###
+`./non-lin-search -qv -o "BF32AC916780E5D4" -f "libraries/NCT_gc.conf"`
+    
 
 ## Implemented Reversible Logic Gates ##
 
