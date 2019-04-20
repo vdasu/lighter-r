@@ -3,9 +3,12 @@
 # Basic implementation
 # Functionality to convert the output of an implementation file which is output from LIGHTER (in C-like syntax) to a TFC [http://webhome.cs.uvic.ca/~dmaslov/mach-read.html] file
 
-file_name = 'test.c'
+import sys
+file_name = sys.argv[1] #'test.c'
 impl_file = open(file_name, 'r')
-tfc_file = open(file_name.split('.')[0]+'.tfc', 'w')
+import os.path
+tfc_file = open(os.path.splitext(file_name)[0]+'.tfc', 'w')
+print tfc_file
 varible = 'x'
 opening_msg = 'This file is auto-generated'
 print >> tfc_file, '# '+opening_msg
@@ -59,6 +62,8 @@ for f in impl_file.readlines():
 			print_str.append('t2'+' '+ get_numbers(exp[1]))
 		elif exp[0] == 'CCNOT2':
 			print_str.append('t3'+' '+ get_numbers(exp[1]))
+		elif exp[0] == 'CCCNOT2':
+			print_str.append('t4'+' '+ get_numbers(exp[1]))
 		elif exp[0] == 'CCCNOT2':
 			print_str.append('t4'+' '+ get_numbers(exp[1]))
 		else:

@@ -35,9 +35,6 @@ Please feel free to suggest/contribute new features or fix bugs or add documenta
 
 Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER; and the `-a` option is omitted. The `-q` option is necessary for LIGHTER-R to work; and the `-s` option takes a string (such as the cipher name) and associates the string to the names of the C-like implementation files.
 
-### Examples ###
-`./non-lin-search -qv -o "BF32AC916780E5D4" -f "libraries/NCT_gc.conf"`
-    
 
 ## Implemented Reversible Logic Gates ##
 <!-- **Fredkin gates are not supported**
@@ -53,7 +50,7 @@ Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER; and
 The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](https://ceit.aut.ac.ir/QDA/RCV.htm) (version 2.5) tool. It shows the two-qubit cost for the Fred<sub>4</sub> gate as −5, we treat this as an editorial mistake and consider the cost as 5.
 -->
 
-|            Gate            |      Library      |Quantum Cost | Two-qubit Cost  | Gate Count |           Symbol  |
+|            Gate            | Library  |Quantum Cost | Two-qubit Cost  | Gate Count |           Symbol  |
 |:--------------------------:|:--------:|:-----------:|:---------------:|:----------:|:--------------------------:|
 |   NOT (Tof<sub>1</sub>)    | NCT/ MCT |      1      |         0       |     1      |            RNOT1           |
 |   CNOT  (Tof<sub>2</sub>)  | NCT/ MCT |      1      |         1       |     1      |            CNOT1           |
@@ -64,6 +61,9 @@ The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](
 ### Naming Convention ###
 The number following the logic gate symbol denotes the number of primitive logic gates used to implement the gate. For example, CNOT1 uses 1 XOR gate in its implementation. The 3 and 4 in the symbol for the FREDKIN gates represent the input size in bits. The 1 and 2 denote which output line is being used. For example, FREDKIN2_32 is the symbol for the 3 bit FREDKIN gate where the second output line is used.
 
+### TFC Support ###
+Inside the [/reversible-helper](./reversible-helper) directory, the [`lighter_to_tfc.py`](./reversible-helper/lighter_to_tfc.py) file allows to convert a generated C file to the [.tfc](http://webhome.cs.uvic.ca/~dmaslov/mach-read.html) format. To use it, pass the source file in the command line. The output file will have the same name and will be generated in the same direcroty as the source file.
+
 ## Notes ##
 
 1. The `-a` option should not be used while proceesing LIGHTER-R (i.e., together with `-q`).
@@ -73,7 +73,7 @@ The number following the logic gate symbol denotes the number of primitive logic
 ### Changes From Vanilla LIGHTER ###
 
 1. All basic functionalities are preserved — so the vanilla LIGHTER can be utilized (including the `-a` option)
-2. `software.conf` is renamed as [`CPU.conf`](./libraries/CPU.conf) and all the libraries (`.conf` files) are moved to the [libraries](./libraries) directory
+2. `software.conf` is renamed as [`CPU.conf`](./libraries/CPU.conf) and all the libraries (`.conf` files) are moved to the [/libraries](./libraries) directory
 3. The description of the SBox (such as <tt>0123456789ABCDEF</tt>) is used automatically in the names of the C-like implementation files when `-s` is not used
 4. Minor update is made in the [`Makefile`](./Makefile) to suppress a warning (`utils.cpp:65:31: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]`)
 
