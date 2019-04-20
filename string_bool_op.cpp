@@ -25,7 +25,7 @@
 
 #include "mitm.h"
 
-void write_c(string *s, vector<int> tmp_tab, bool to_reverse)
+void write_c(string *s, vector<int> tmp_tab, bool to_reverse = false)
 {
   int i = 0;
   auto pos = s->find_first_of("[");
