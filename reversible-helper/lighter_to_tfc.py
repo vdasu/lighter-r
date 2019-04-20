@@ -55,10 +55,14 @@ for f in impl_file.readlines():
 
 		if exp[0] == 'RNOT1':
 			print_str.append('t1'+' '+ get_numbers(exp[1]))
+		elif exp[0] == 'CNOT1':
+			print_str.append('t2'+' '+ get_numbers(exp[1]))
 		elif exp[0] == 'CCNOT2':
 			print_str.append('t3'+' '+ get_numbers(exp[1]))
-		#else:
-		#	raise NotImplementedError
+		elif exp[0] == 'CCCNOT2':
+			print_str.append('t4'+' '+ get_numbers(exp[1]))
+		else:
+			raise NotImplementedError
 print >> tfc_file, ''
 print >> tfc_file, '.v'+' '+ ','.join([varible+'_'+str(i) for i in initial_ordering])
 print >> tfc_file, '.i'+' '+ ','.join([varible+'_'+str(i) for i in initial_ordering])

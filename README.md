@@ -53,8 +53,7 @@ Apart from `-q` and `-s`, rest options are adopted from the vanilla LIGHTER; and
 The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](https://ceit.aut.ac.ir/QDA/RCV.htm) (version 2.5) tool. It shows the two-qubit cost for the Fred<sub>4</sub> gate as −5, we treat this as an editorial mistake and consider the cost as 5.
 
 ### Naming Convention ###
-1. <<What does the number at the end of the name of a gate imply>>
-2. The number following the logic gate symbol denotes the number of primitive logic gates used to implement the gate. For example, CNOT1 uses 1 XOR gate in its implementation. The 3 and 4 in the symbol for the FREDKIN gates represent the input size in bits. The 1 and 2 denote which output line is being used. For example, FREDKIN2_32 is the symbol for the 3 bit FREDKIN gate where the second output line is used.
+The number following the logic gate symbol denotes the number of primitive logic gates used to implement the gate. For example, CNOT1 uses 1 XOR gate in its implementation. The 3 and 4 in the symbol for the FREDKIN gates represent the input size in bits. The 1 and 2 denote which output line is being used. For example, FREDKIN2_32 is the symbol for the 3 bit FREDKIN gate where the second output line is used.
 
 ## Notes ##
 
