@@ -25,11 +25,12 @@
 
 #include "mitm.h"
 
-void write_c(string *s, vector<int> tmp_tab)
+void write_c(string *s, vector<int> tmp_tab, bool to_reverse)
 {
   int i = 0;
   auto pos = s->find_first_of("[");
   s->insert(pos+1, to_string(tmp_tab[0]));
+  if (to_reverse) { reverse(tmp_tab.begin(), tmp_tab.end()); }
   while((pos = s->find_first_of("[", pos+1)) != string::npos)
   {
     s->insert(pos+1, to_string(tmp_tab[i%(tmp_tab.size())]));
@@ -132,15 +133,15 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
                 case XOR2_ANDN2  : a = (~fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp];break;
                 case XOR2_ORN2   : a = (~fun_prev.bit_slice[k] | fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp];break;
                 case CCNOT2      : a = (fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) ^ fun_prev.bit_slice[tmp]; is_ccnot2 = true; break;
-                case FREDKIN2_31  : a = (~fun_prev.bit_slice[k] & fun_prev.bit_slice[tmp]) | (fun_prev.bit_slice[k] & fun_prev.bit_slice[j]);break;
-                case FREDKIN2_32  : a = (~fun_prev.bit_slice[k] & fun_prev.bit_slice[j]) | (fun_prev.bit_slice[k] & fun_prev.bit_slice[tmp]);break;
+                case FREDKIN2_31  : a = ((~fun_prev.bit_slice[k]) & fun_prev.bit_slice[tmp]) | (fun_prev.bit_slice[k] & fun_prev.bit_slice[j]);break;
+                case FREDKIN2_32  : a = ((~fun_prev.bit_slice[k]) & fun_prev.bit_slice[j]) | (fun_prev.bit_slice[k] & fun_prev.bit_slice[tmp]);break;
               }
               if(!reverse) b = f.bit_slice[f.info_line];
               else b = f.prev;
               if( a == b )
               {
-                if(is_ccnot2) { write_c(&s, {j, k, tmp}); is_ccnot2 = false; }
-                else write_c(&s, {tmp, k, j});
+                write_c(&s, {tmp, k, j}, is_ccnot2);
+                is_ccnot2 = false;
                 return s;
               }
             }
@@ -202,8 +203,8 @@ string bool_op_super_gates(const function_t f, int operation, string s, bool rev
                 else b = f.prev;
                 if( a == b )
                 {
-                  if(is_cccnot2) { write_c(&s, {k, j, l, tmp}); is_cccnot2 = false; }
-                  else write_c(&s, {tmp, l, j, k});
+                  write_c(&s, {tmp, l, j, k}, is_cccnot2);
+                  is_cccnot2 = false;
                   return s;
                 }
               }
