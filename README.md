@@ -59,7 +59,9 @@ The quantum cost and the two-qubit cost metrics are adopted from the [RCVIWER+](
 
 
 ### Naming Convention ###
-The number following the logic gate symbol denotes the number of primitive logic gates used to implement the gate. For example, CNOT1 uses 1 XOR gate in its implementation. The 3 and 4 in the symbol for the FREDKIN gates represent the input size in bits. The 1 and 2 denote which output line is being used. For example, FREDKIN2_32 is the symbol for the 3 bit FREDKIN gate where the second output line is used.
+The number following the logic gate symbol denotes the number of primitive logic gates used to implement the gate. For example, CNOT1 uses 1 XOR gate in its implementation. In the case of Tof<sub>3</sub> XOR and AND gates are used, hence CCNOT2.
+<!--The 3 and 4 in the symbol for the FREDKIN gates represent the input size in bits. The 1 and 2 denote which output line is being used. For example, FREDKIN2_32 is the symbol for the 3 bit FREDKIN gate where the second output line is used.
+-->
 
 ### TFC Support ###
 Inside the [/reversible-helper](./reversible-helper) directory, the [`lighter_to_tfc.py`](./reversible-helper/lighter_to_tfc.py) file allows to convert a generated C file to the [.tfc](http://webhome.cs.uvic.ca/~dmaslov/mach-read.html) format. To use it, pass the source file in the command line. The output file will have the same name and will be generated in the same direcroty as the source file.
