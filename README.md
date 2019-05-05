@@ -4,7 +4,7 @@ LIGHTER-R is a tool to (near-)optimally implement a given 4 × 4 SBox using logi
 
 The source codes, hosted at [GitHub](https://github.com/vdasu/lighter-r), are a supporting component for the paper:
 **LIGHTER-R: Optimized Reversible Circuit Implementation for SBoxes**
-by Vishnu Asutosh Dasu, Anubhab Baksi, Sumanta Sarkar and Anupam Chattopadhyay.
+by [Vishnu Asutosh Dasu](mailto:vishnu.asutosh@learner.manipal.edu), [Anubhab Baksi](mailto:anubhab001@e.ntu.edu.sg), Sumanta Sarkar and Anupam Chattopadhyay.
 
 Please feel free to suggest/contribute new features or fix bugs or add documentation.
 
@@ -78,10 +78,3 @@ Inside the [/reversible-helper](./reversible-helper) directory, the [`lighter_to
 2. `software.conf` is renamed as [`CPU.conf`](./libraries/CPU.conf) and all the libraries (`.conf` files) are moved to the [/libraries](./libraries) directory
 3. The description of the SBox (such as <tt>0123456789ABCDEF</tt>) is used automatically in the names of the C-like implementation files when `-s` is not used
 4. Minor update is made in the [`Makefile`](./Makefile) to suppress a warning (`utils.cpp:65:31: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]`)
-
-Contributors
----
-* [Vishnu Asutosh Dasu](mailto:vishnu.asutosh@learner.manipal.edu)
-* [Anubhab Baksi](mailto:anubhab001@e.ntu.edu.sg)
-* Sumanta Sarkar
-* Anupam Chattopadhyay
