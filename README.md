@@ -8,9 +8,7 @@ by [Vishnu Asutosh Dasu](mailto:vishnu.asutosh@learner.manipal.edu), [Anubhab Ba
 
 Please feel free to suggest/contribute new features or fix bugs or add documentation.
 
-## How to Use ##
-
-### Command Line Usage ###
+## Command Line Usage ##
     ./non-lin-search [-v] [-w] [-u] [-q]
                    [-l NUMBER] [-p NUMBER] [-r NUMBER]
                    [-i SBOX] [-o SBOX]
