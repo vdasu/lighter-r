@@ -3,7 +3,7 @@
 LIGHTER-R is a tool to (near-)optimally implement a given 4 × 4 SBox using logic gates from a reversible logic library (with an associated cost metric). This is an extension of the tool LIGHTER [hyperlinked [original publication](https://tosc.iacr.org/index.php/ToSC/article/view/806), [archived publication](https://eprint.iacr.org/2017/101), [source codes](http://jeremy.jean.free.fr/pub/fse2018_layer_implementations.tar.gz)]; which only works for 4 × 4 SBoxes the classical computing paradigm, namely for ASIC and CPU implementations. 
 
 The source codes, hosted at [GitHub](https://github.com/vdasu/lighter-r), are a supporting component for the paper:
-**LIGHTER-R: Optimized Reversible Circuit Implementation for SBoxes**
+**LIGHTER-R: Optimized Reversible Circuit Implementation For SBoxes**
 by [Vishnu Asutosh Dasu](mailto:vishnu.asutosh@learner.manipal.edu), [Anubhab Baksi](mailto:anubhab001@e.ntu.edu.sg), Sumanta Sarkar and Anupam Chattopadhyay [accepted in [IEEE SoCC 2019](https://ieee-socc.org/index.php)].
 
 Please feel free to suggest/contribute new features or fix bugs or add documentation.
