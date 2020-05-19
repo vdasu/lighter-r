@@ -4,7 +4,7 @@ LIGHTER-R is a tool to (near-)optimally implement a given 4 × 4 SBox using logi
 
 The source code, hosted on [GitHub](https://github.com/vdasu/lighter-r), is a supporting component for the paper:
 **LIGHTER-R: Optimized Reversible Circuit Implementation For SBoxes**
-by [Vishnu Asutosh Dasu](mailto:vishnu.asutosh@learner.manipal.edu), [Anubhab Baksi](mailto:anubhab001@e.ntu.edu.sg), Sumanta Sarkar and Anupam Chattopadhyay [accepted in [IEEE SoCC 2019](http://socc2019.ieee-socc.org/)].
+by [Vishnu Asutosh Dasu](mailto:vishnu.asutosh@learner.manipal.edu), [Anubhab Baksi](mailto:anubhab001@e.ntu.edu.sg), Sumanta Sarkar and Anupam Chattopadhyay [[IEEE SoCC 2019](http://socc2019.ieee-socc.org/)/[publication](https://ieeexplore.ieee.org/abstract/document/9088027)].
 
 Please feel free to suggest/contribute new features or fix bugs or add documentation.
 
