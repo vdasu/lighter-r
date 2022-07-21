@@ -16,7 +16,7 @@ Please feel free to suggest/contribute new features or fix bugs or add documenta
 
     -v : Verbose mode
     -u : Expand only [-i] function (identity function by default)
-    -w : Write graphe in file
+    -w : Write graph output in a file
     
     -q : Enable all reversible gates (essential for LIGHTER-R)
 
