@@ -69,6 +69,7 @@ Inside the [/reversible-helper](./reversible-helper) directory, the [`lighter_to
 1. The `-a` option should not be used while proceesing LIGHTER-R (i.e., together with `-q`).
 2. The Peres (Per<sub>3</sub>) gate is implemented in the [peres](https://github.com/vdasu/lighter-r/tree/peres) branch, but this branch is not under active development.
 3. Apparently LIGHTER does not support logic gates with 0 cost. Through empirical tests, we observe that it does not work (basically, prints nothing) if the cost is less than 0.01. For this reason, the cost for the NOT (Tof<sub>1</sub>) gate has been substituted for 0.01 instead in all three (NCT, MCT and MCT+MCF) libraries.
+4. LIGHTER-R requires `g++11` or greater.
 
 ### Changes From Vanilla LIGHTER ###
 
