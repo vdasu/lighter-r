@@ -106,4 +106,4 @@ for f in range(16)[::]:
 for f in range(16):
 	if f not in Z:
 		print ('Error, missing %x'%f)
-print (''.join(map(lambda x: hex(x)[2:], Z))).upper()
+print ((''.join(map(lambda x: hex(x)[2:], Z))).upper())
