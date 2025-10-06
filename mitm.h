@@ -30,6 +30,7 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
+#include <array>
 #include <inttypes.h>
 #include <string>
 #include <fstream>

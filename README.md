@@ -6,8 +6,6 @@ The source code, hosted on [GitHub](https://github.com/vdasu/lighter-r), is a su
 **LIGHTER-R: Optimized Reversible Circuit Implementation For SBoxes**
 by [Vishnu Asutosh Dasu](mailto:vishnu98dasu@gmail.com), [Anubhab Baksi](mailto:anubhab001@e.ntu.edu.sg), Sumanta Sarkar and Anupam Chattopadhyay [[IEEE SoCC 2019](http://socc2019.ieee-socc.org/)/[publication](https://ieeexplore.ieee.org/abstract/document/9088027)].
 
-Please feel free to suggest/contribute new features or fix bugs or add documentation.
-
 ## Command Line Usage ##
     ./non-lin-search [-v] [-w] [-u] [-q]
                    [-l NUMBER] [-p NUMBER] [-r NUMBER]
